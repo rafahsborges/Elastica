@@ -149,6 +149,8 @@ class Http extends AbstractTransport
 
         curl_setopt($conn, CURLOPT_CUSTOMREQUEST, $httpMethod);
 
+        curl_setopt($conn, CURLOPT_SSL_VERIFYPEER, false);
+
         $start = microtime(true);
 
         // cURL opt returntransfer leaks memory, therefore OB instead.
